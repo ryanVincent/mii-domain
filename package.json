@@ -1,0 +1,21 @@
+
+{
+  "name": "mii-domain",
+  "version": "1.0.0",
+  "description": "data accrss layer",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "moment": "^2.18.1",
+		"moment-range": "^3.0.3"
+	}
+}
