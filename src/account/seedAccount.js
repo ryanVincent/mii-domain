@@ -21,14 +21,13 @@ const updateTransactionsForMonth = async (bot, transactionRepo, accountId, month
 
 const updateAccount = async (bot, accountRepo, accountId) => {
 	const accounts = await bot.getAccounts();
-	console.log(accounts);
 	const account = accounts.find(acc => acc.id === accountId);
 	return await accountRepo.updateAccount(account);
 }
 
 const seedAccount = (bot, transactionRepo, accountRepo) => async (accountId, startMonth) => {
 	await bot.login();
-	await updateAccount(bot, accountRepo, transactionRepo);
+	await updateAccount(bot, accountRepo, accountId);
 	const range = getRange(startMonth);
 
 	const results = range.map(month => updateTransactionsForMonth(bot, transactionRepo, accountId, month));
