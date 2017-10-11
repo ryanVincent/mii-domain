@@ -1,8 +1,6 @@
 const Moment = require('moment');
 const MomentRange = require('moment-range');
 
-console.log(MomentRange.extendMoment);
-
 const moment = MomentRange.extendMoment(Moment);
 
 const getRange = (startMonth) => {
