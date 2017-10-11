@@ -21,6 +21,7 @@ const updateTransactionsForMonth = async (bot, transactionRepo, accountId, month
 
 const updateAccount = async (bot, accountRepo, accountId) => {
 	const accounts = await bot.getAccounts();
+	console.log(accounts);
 	const account = accounts.find(acc => acc.id === accountId);
 	return await accountRepo.updateAccount(account);
 }
