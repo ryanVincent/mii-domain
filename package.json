@@ -1,6 +1,6 @@
 {
   "name": "mii-domain",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "data accrss layer",
   "main": "./src/index.js",
   "scripts": {
