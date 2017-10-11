@@ -12,6 +12,11 @@ const updateTransactionsForMonth = async (bot, transactionRepo, accountId, month
 	await transactionRepo.createTransactions(transactions.transactions.items, accountId);
 }
 
+const updatePendingTransactions = async (bot, transactionRepo, accountId) => {
+	const transactions = await bot.getPendingTransactions(accountId);
+	await transactionRepo.createPendingTransactions(transactions, accountId);
+}
+
 const updateAccount = async (bot, accountRepo, accountId) => {
 	const accounts = await bot.getAccounts();
 	const account = accounts.find(acc => acc.id === accountId);
@@ -29,6 +34,7 @@ const updateAccountAndTransactions = (bot, transactionRepo, accountRepo) => asyn
 	await bot.login();
 	await updateAccount(bot, accountRepo, accountId);
 	await updateTransactions(bot, transactionRepo, accountId);
+	await updatePendingTransactions(bot, transactionRepo, accountId);
 	await bot.logout();
 }
 
