@@ -5,3 +5,5 @@ const tagTransactions = (tagRepo, transactionReop) => async (tag, description, i
 	await tagRepo.createTag(tag);
 	await tagRepo.tagByDescription(tag, description, isRecurring, isTransfer);
 }
+
+module.exports = tagTransactions;
